@@ -33,5 +33,12 @@ operaatio, jossa n on syötteen koko.
 Tietorakenteita toteutettavana on siis vähintäänkin HashMap ja algoritmeina
 sen perusoperaatiot sekä Lempel-Ziv-Welch:n pakkaus- ja purkualgoritmi. 
 Nämä algoritmit ja tietorakenteet eivät vaadi rekursiivisuutta ja muistissa
-pidettävällä listalla on aina määrätty koko (65 535 merkintää) joten tila-
-vaativuus algoritmeilla on vakio.
+pidettävällä listalla on aina määrätty maksimikoko sovitun bittimäärän mukaan, 
+joten tähän tiettyyn kokoon asti HashMapin voi ajatella vaativan tilaa 
+pahimmassa tapauksessa O(n) verran.
+
+Lähteet:
+https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Welch
+http://www.fileformat.info/mirror/egff/ch09_04.htm
+https://www.youtube.com/watch?v=j2HSd3HCpDs
+http://algs4.cs.princeton.edu/55compression/LZW.java.html
