@@ -31,4 +31,7 @@ aikaisen operaation. Täten niiden aikavaativuus on O(n) + vakioaikainen
 operaatio, jossa n on syötteen koko.
 
 Tietorakenteita toteutettavana on siis vähintäänkin HashMap ja algoritmeina
-sen perusoperaatiot sekä Lempel-Ziv-Welch:n pakkaus- ja purkualgoritmi.
+sen perusoperaatiot sekä Lempel-Ziv-Welch:n pakkaus- ja purkualgoritmi. 
+Nämä algoritmit ja tietorakenteet eivät vaadi rekursiivisuutta ja muistissa
+pidettävällä listalla on aina määrätty koko (65 535 merkintää) joten tila-
+vaativuus algoritmeilla on vakio.
