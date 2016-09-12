@@ -21,3 +21,5 @@ Seuraavalla viikolla lähden toteuttamaan itse ohjelmaa aluksi käyttäen
 Javan valmiita luokkia. Lähden todennäköisimmin toteuttamaan pakkaamis- ja
 purkamisalgoritmeja ensimmäisenä, tehden niistä toimivia yksittäisten 
 string muuttujien kanssa.
+
+Työtunteja: ~9h
