@@ -55,9 +55,10 @@ public class Compressor {
             while((koodi = (short) inR.read()) != -1){
                 
                 char c = (char) koodi;
-                if(!this.dict.loytyykoAvain(sana + c)){
-                    
-                    short tiedostoonLisattava = Short.parseShort(this.dict.hae(sana).toString());
+                
+                if(!this.dict.loytyykoAvain(sana + c)){        
+                    String testi = this.dict.hae(sana).toString();
+                    short tiedostoonLisattava = Short.parseShort(testi);
                     this.writer.writeShort(tiedostoonLisattava);
                     
                     this.dict.lisaa(sana + c);

@@ -69,8 +69,6 @@ public class Decompressor {
             in.close();
             oin.close();
             writer.close();
-                
-            System.out.println("Purettu!!!");
             
         }catch(Exception e){
             System.out.println("Virhe purettaessa tiedostoa");

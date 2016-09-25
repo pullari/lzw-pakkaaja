@@ -25,8 +25,9 @@ public class LzwPacker {
         
         Compressor pakkaaja = new Compressor(pakkaa);
         pakkaaja.compress();
-        
+        System.out.println("Pakattu!");
         Decompressor purkaja = new Decompressor(pura);
         purkaja.decompress();
+        System.out.println("Purettu!!!"); 
     }
 }

@@ -5,25 +5,20 @@
  */
 package lzw.packer;
 
-import java.util.HashMap;
-
 /**
- * Tämä luokka toimii tekstitiedoston pakkaajan sanakirjana, johon tallennetaan jo löydettyjä kirjain yhdistelmiä.
- * Niille myös täällä määrätään koodit, jotka pakattuun tiedostoon kirjoitetaan.
- * 
- * @author Samuli Rouvinen
+ * Tämä luokka toimii pakkausvaiheen pakkaajan sanakirjana.
+ * @author pullis
  * @version 0.1
  */
 public class Dict {
-    
-    HashMap comp;
+    HaTbl comp;
     short viimeinen;
     
     /**
      * Dict luokan konstruktori.
      */
     public Dict(){
-        this.comp = new HashMap<>();
+        this.comp = new HaTbl();
         this.viimeinen = 0;
     }
     
@@ -33,7 +28,14 @@ public class Dict {
      * @param tama Tämä on lisättävä objekti
      */
     public void lisaa(Object tama){
-        this.comp.put(tama, this.viimeinen + 1);
+
+        if(viimeinen == 32767){
+            putsaa();
+            viimeinen = 0;
+            alusta();
+        } 
+        
+        this.comp.put(tama, (short) this.viimeinen + 1);
         this.viimeinen++;
     }
     
@@ -67,5 +69,9 @@ public class Dict {
      */
     public Object hae(Object avain) {
         return this.comp.get(avain);
+    }
+    
+    public void putsaa(){
+        this.comp.clear();
     }
 }

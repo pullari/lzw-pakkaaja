@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="pullis-PC" name="lzw.packer.CompressorTest" skipped="0" tests="1" time="0.178" timestamp="2016-09-18T15:13:51">
+<testsuite errors="0" failures="0" hostname="pullis-PC" name="lzw.packer.CompressorTest" skipped="0" tests="1" time="0.236" timestamp="2016-09-25T17:03:28">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="US" />
@@ -51,7 +51,7 @@
     <property name="copylibs.rebase" value="true" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner lzw.packer.CompressorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\pullis\Documents\NetBeansProjects\lzw-packer\build\test\results\TEST-lzw.packer.CompressorTest.xml crashfile=C:\Users\pullis\Documents\NetBeansProjects\lzw-packer\build\junitvmwatcher8735342823771282631.properties propsfile=C:\Users\pullis\Documents\NetBeansProjects\lzw-packer\build\junit2498002402561512326.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner lzw.packer.CompressorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\pullis\Documents\NetBeansProjects\lzw-packer\build\test\results\TEST-lzw.packer.CompressorTest.xml crashfile=C:\Users\pullis\Documents\NetBeansProjects\lzw-packer\build\junitvmwatcher7980396480608779798.properties propsfile=C:\Users\pullis\Documents\NetBeansProjects\lzw-packer\build\junit4999040366904972459.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="build.sysclasspath" value="ignore" />
     <property name="ap.supported.internal" value="true" />
@@ -59,7 +59,7 @@
     <property name="libs.javaee-endorsed-api-7.0.javadoc" value="C:\Program Files\tmcbeans\enterprise\docs\javaee-doc-api.jar" />
     <property name="libs.jaxws21.javadoc" value="C:\Program Files\tmcbeans\java\docs\jaxws-api-doc.zip" />
     <property name="libs.spring-webmvc4.0.javadoc" value="" />
-    <property name="includes" value="**" />
+    <property name="includes" value="lzw/packer/**/*Test.java" />
     <property name="user.country" value="US" />
     <property name="manifest.file" value="manifest.mf" />
     <property name="javadoc.encoding" value="UTF-8" />
@@ -377,7 +377,7 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\tmcbeans\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="lzw.packer.CompressorTest" name="testCompress" time="0.133" />
+  <testcase classname="lzw.packer.CompressorTest" name="testCompress" time="0.181" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

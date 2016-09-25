@@ -6,18 +6,24 @@
 package lzw.packer;
 
 /**
- * Tämä luokka toimii sanakirjana purkajalle. Se käyttää muuten samoja metodeja kuin pakkaaja, mutta se lisää avaimeksi koodin ja pariksi merkkijonon.
+ * Tämä luokka perii Dict-luokan ja korvaa siitä pelkästään lisaa-metodin toiminnallisuuden.
  * @author pullis
  * @version 0.1
  */
-public class DecompDict extends Dict {
-    
+public class DecompDict extends Dict{
     /**
-     * Metodi ylikirjoittaa Dict-luokan lisäys metodin kääntäen sen niin, että short-koodi on avain ja merkkijono sen pari.
-     * @param tama Lisättävä merkkijono.
+     * Lisää purku-sanakirjaan objektin tama. Lisäys tehdään toisinpäin, kuin tavallisessa Dict-luokassa.
+     * @param tama Lisättävä objekti.
      */
     @Override
     public void lisaa(Object tama){
+        
+        if(viimeinen == 32767){
+            putsaa();
+            viimeinen = 0;
+            alusta();
+        }
+        
         this.comp.put( (short)this.viimeinen + 1, tama);
         this.viimeinen++;
     }
