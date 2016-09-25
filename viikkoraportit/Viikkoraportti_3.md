@@ -26,3 +26,5 @@ kahdenlaiset avain-arvo parit, vaikkakin se riittää tämän ohjelman käyttö�
 Seuraavaksi lähden tekemään ohjelmalle nykyisessä muodossaan suorityskyky-
 testausta ja mahdollisesti dynaamisia ylivuototaulukoita. Alan myös miettimään
 graafista toteutusta purettavan/pakattavan tiedoston valinnalle.
+
+Työtunteja: ~8h
