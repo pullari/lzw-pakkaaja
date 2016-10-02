@@ -39,6 +39,8 @@ public class Decompressor {
      */
     public int decompress(){
     
+        long timeBefDeComp = System.currentTimeMillis();
+        
         short edellinen = 0;
         short koodi = 0;
         
@@ -74,6 +76,11 @@ public class Decompressor {
             System.out.println("Virhe purettaessa tiedostoa");
             return 0;
         }
+        
+        long timeAfDeComp = System.currentTimeMillis();
+        long time = (timeAfDeComp - timeBefDeComp);
+        System.out.println("Purkamiseen Decompressor-luokassa kului: " + time + " millisekuntia eli " + (time/1000) + " sekuntia");
+         
         return 1;
     }
 }

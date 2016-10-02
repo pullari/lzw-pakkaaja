@@ -15,7 +15,7 @@ package lzw.packer;
 public class HaTbl {
     
     Object[] ar; 
-    int size = 81703;
+    int size = 32768;
     /**
      * Hajautustaulun konstruktori.
      */
@@ -84,7 +84,11 @@ public class HaTbl {
                 alue[i] = pari;
                 break;
             }
-        }
+            if(i == alue.length - 1){
+                alue = changeArraySize(alue, alue.length * 2);
+                this.ar[hash] = alue;
+            }   
+        } 
     }
     /**
      * Etsii vastaavan avain-arvo parin ja palauttaa sen arvon
@@ -120,10 +124,17 @@ public class HaTbl {
         short asc = 0;
         
         for (int i = 0; i < array.length; i++) {
-            
             asc += (short) array[i];
         }
-        
-        return asc % 81703;
+        if(asc % 32768 < 0)return -1*asc % 32768;
+        return asc % 32768;
+    }
+    
+    Pair[] changeArraySize(Pair[] array, int newSize){
+        Pair[] newArray = new Pair[newSize];
+        for (int i = 0; i < array.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
     }
 }

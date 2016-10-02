@@ -57,6 +57,35 @@ public class HaTblTest {
         instance.clear();
         instance.get(256);
     }
+    
+    /**
+     * Test of changeArraySize method, of class HaTbl
+     */
+    
+    @Test
+    public void testChangeArraySize() {
+        
+        HaTbl instance = new HaTbl();
+        Pair[] array = (Pair[]) instance.ar[2];
+        array = instance.changeArraySize(array, array.length * 2);
+        assertTrue(array.length == 20);
+    }
+    /**
+     * Test that array is copied correctly
+     */
+    @Test
+    public void testChangeArraySizeCopy() {
+        
+        HaTbl instance = new HaTbl();
+        Pair[] array = (Pair[]) instance.ar[2];
+        Pair fir = new Pair(1,2);
+        Pair sec = new Pair(2,1);
+        array[0] = fir;
+        array[1] = sec;
+        array = instance.changeArraySize(array, array.length * 2);
+        assertTrue(array[0] == fir);
+        assertTrue(array[1] == sec);
+    }
 
     /**
      * Test of containsKey method, of class HaTbl.
@@ -75,10 +104,10 @@ public class HaTblTest {
     @Test
     public void testPut() {
         HaTbl instance = new HaTbl();
-        instance.put("moi", 41265);
-        instance.put(52341,"test");
-        assertEquals(41265,instance.get("moi"));
-        assertEquals("test",instance.get(52341));
+        instance.put("moi", 6);
+        instance.put(8,"test");
+        assertEquals(6,instance.get("moi"));
+        assertEquals("test",instance.get(8));
     }
 
     /**
@@ -87,10 +116,10 @@ public class HaTblTest {
     @Test
     public void testGet() {
         HaTbl instance = new HaTbl();
-        instance.put("moi", 41265);
-        instance.put(52341,"test");
-        assertEquals(41265,instance.get("moi"));
-        assertEquals("test",instance.get(52341));
+        instance.put("moi", 6);
+        instance.put(7,"test");
+        assertEquals(6,instance.get("moi"));
+        assertEquals("test",instance.get(7));
     }
 
     /**

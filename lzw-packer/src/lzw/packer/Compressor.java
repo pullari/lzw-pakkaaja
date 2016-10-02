@@ -45,6 +45,8 @@ public class Compressor {
      */
     public int compress(){
     
+        long timeBefComp = System.currentTimeMillis();
+        
         String sana;
         short koodi;
         
@@ -75,9 +77,14 @@ public class Compressor {
             this.writer.close();
             inR.close();
         }catch(Exception e){
+            System.out.println(e.toString());
             System.out.println("Ongelma pakatessa tiedostoa. Tiedostoa ei ehkä voitu lukea.");
             return 0;
         }
+        
+        long timeAfComp = System.currentTimeMillis();
+        long time = (timeAfComp - timeBefComp);
+        System.out.println("Pakkaamiseen Compressor-luokassa meni: " + time + " millisekuntia eli " + (time/1000) + " sekuntia");
         
         return 1;
     }
