@@ -5,6 +5,7 @@
  */
 package lzw.packer;
 
+import lzw.packer.dictionaries.DecompDict;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -44,8 +45,8 @@ public class DecompDictTest {
     public void testLisaa() {
         String tama = "Miten Menee";
         DecompDict instance = new DecompDict();
-        instance.lisaa(tama);
-        assertTrue("Löytyy myös decompista", instance.loytyykoAvain(1));
+        instance.add(tama);
+        assertTrue("Löytyy myös decompista", instance.hasKey((short)1));
     }
     
 }

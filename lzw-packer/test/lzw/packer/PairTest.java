@@ -5,6 +5,7 @@
  */
 package lzw.packer;
 
+import lzw.packer.tools.Pair;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

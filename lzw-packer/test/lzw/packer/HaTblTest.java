@@ -5,6 +5,8 @@
  */
 package lzw.packer;
 
+import lzw.packer.tools.Pair;
+import lzw.packer.tools.HaTbl;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -42,9 +44,9 @@ public class HaTblTest {
      */
     @Test
     public void testAlusta() {
-        HaTbl instance = new HaTbl();
-        instance.alusta();
-        assertTrue(instance.ar.length == instance.size);
+        HaTbl<String, Short> instance = new HaTbl();
+        instance.init();
+        assertTrue(instance.getAr().length == 32768);
     }
 
     /**
@@ -66,7 +68,7 @@ public class HaTblTest {
     public void testChangeArraySize() {
         
         HaTbl instance = new HaTbl();
-        Pair[] array = (Pair[]) instance.ar[2];
+        Pair[] array = (Pair[]) instance.getAr()[2];
         array = instance.changeArraySize(array, array.length * 2);
         assertTrue(array.length == 20);
     }
@@ -77,7 +79,7 @@ public class HaTblTest {
     public void testChangeArraySizeCopy() {
         
         HaTbl instance = new HaTbl();
-        Pair[] array = (Pair[]) instance.ar[2];
+        Pair[] array = (Pair[]) instance.getAr()[2];
         Pair fir = new Pair(1,2);
         Pair sec = new Pair(2,1);
         array[0] = fir;

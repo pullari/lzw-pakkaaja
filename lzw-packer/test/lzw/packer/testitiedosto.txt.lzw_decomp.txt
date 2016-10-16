@@ -2,24 +2,24 @@ Project Gutenberg EBook The Bible, King James, Book 1: Genesis
 
 Copyright laws are changing all over the world. Be sure to check the
 copyright laws for your country before downloading or redistributing
-this or any other Project Gutenberg eBook.
+this or any other oject Gutenberg eBook.
 
-This header should be the first thing seen when viewing this Project
+This header should be the first thing seen when viewing this oject
 Gutenberg file.  Please do not remove it.  Do not change or edit the
 header without written permission.
 
 Please read the "legal small print," and other information about the
-eBook and Project Gutenberg at the bottom of this file.  Included is
+eBook and oject Gutenberg at the bottom of this file.  Included is
 important information about your specific rights and restrictions in
 how the file may be used.  You can also find out about how to make a
-donation to Project Gutenberg, and how to get involved.
+donation to oject Gutenberg, and how to get involved.
 
 
 **Welcome To The World of Free Plain Vanilla Electronic Texts**
 
 **EBooks Readable By Both Humans and By Computers, Since 1971**
 
-*****These EBooks Were Prepared By Thousands of Volunteers*****
+*****These EBooks Were epared By Thousands of Volunteers*****
 
 
 
@@ -198,7 +198,7 @@ Book 01        Genesis
 01:002:010 And a river went out of Eden to water the garden; and from
            thence it was parted, and became into four heads.
 
-01:002:011 The name of the first is Pison: that is it which compasseth
+01:002:011 The name of the first is ison: that is it which compasseth
            the whole land of Havilah, where there is gold;
 
 01:002:012 And the gold of that land is good: there is bdellium and the
@@ -1012,7 +1012,7 @@ Book 01        Genesis
 01:011:017 And Eber lived after he begat Peleg four hundred and thirty
            years, and begat sons and daughters.
 
-01:011:018 And Peleg lived thirty years, and begat Reu:
+01:011:018 And eleg lived thirty years, and begat Reu:
 
 01:011:019 And Peleg lived after he begat Reu two hundred and nine years,
            and begat sons and daughters.

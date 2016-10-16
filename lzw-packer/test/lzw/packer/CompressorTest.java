@@ -5,6 +5,7 @@
  */
 package lzw.packer;
 
+import lzw.packer.compressors.Compressor;
 import java.io.File;
 import org.junit.After;
 import org.junit.AfterClass;

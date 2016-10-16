@@ -5,6 +5,7 @@
  */
 package lzw.packer;
 
+import lzw.packer.dictionaries.Dict;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -44,8 +45,8 @@ public class DictTest {
     public void testLisaa() {
         String tama = "hei";
         Dict instance = new Dict();
-        instance.lisaa(tama);
-        assertTrue("Lisätty objekti löytyy",instance.hae(tama) != null);
+        instance.add(tama);
+        assertTrue("Lisätty objekti löytyy",instance.get(tama) != null);
     }
 
     /**
@@ -55,8 +56,8 @@ public class DictTest {
     public void testLoytyykoAvain() {
         String avain = "hei";
         Dict instance = new Dict();
-        instance.lisaa(avain);
-        assertTrue("Avain löytyi", instance.loytyykoAvain(avain));
+        instance.add(avain);
+        assertTrue("Avain löytyi", instance.hasKey(avain));
     }
 
     /**
@@ -65,8 +66,8 @@ public class DictTest {
     @Test
     public void testAlusta() {
         Dict instance = new Dict();
-        instance.alusta();
-        assertTrue("Löytyy", instance.loytyykoAvain("a"));
+        instance.init();
+        assertTrue("Löytyy", instance.hasKey("a"));
     }
 
     /**
@@ -75,10 +76,9 @@ public class DictTest {
     @Test
     public void testHae() {
         Dict instance = new Dict();
-        instance.alusta();
-        instance.lisaa("jotain");
-        int result = (int) instance.hae("jotain");
-        assertTrue("Hakeminen toimii", result == 256);
+        instance.init();
+        instance.add("jotain");
+        int result = (int) instance.get("jotain");
+        assertTrue("Hakeminen toimii", result == 255);
     }
-    
 }
