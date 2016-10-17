@@ -17,8 +17,8 @@ ajettu kahteen kertaan, jotta ensimmäisen kerran hitaus jäisi tuloksista.
 Tiedostot:
 nimi | koko pakkaamattomana | koko pakattuna | pakkausaika (ms) | purkuaika (ms)
  
-testiTiedosto.txt | 257 kt | 106 kt | 136,9 ms | 91,5 ms \n
-test2.txt | 580 kt | 292 kt | 236,9 ms | 157,4 ms \n
-2city11.txt | 770 kt | 382 kt | 273,6 ms | 173,3 ms \n
+testiTiedosto.txt | 257 kt | 106 kt | 136,9 ms | 91,5 ms
+test2.txt | 580 kt | 292 kt | 236,9 ms | 157,4 ms
+2city11.txt | 770 kt | 382 kt | 273,6 ms | 173,3 ms
 kjv.txt | 80630 kt | 33 845 kt | 15 123,5 ms | 6519,4 ms
 
