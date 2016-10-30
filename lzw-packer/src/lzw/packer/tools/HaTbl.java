@@ -6,25 +6,23 @@
 package lzw.packer.tools;
 
 /**
- * Tämä luokka on oma toteutukseni hajautustaulusta. 
- * Suurimpia puutteita siinä on se, että se toimii pelkästään parien (String, short) ja (short, String) kanssa. Myös fiksattu ylivuotolistan koko voi osoittautua ongelmaksi.
- * Se kuitenkin tekee LZW-pakkaajassa tehtävänsä.
- * @author pullis
- * @version 0.1.1
+ * This class is a HashMap implementation 
+ * @author Samuli Rouvinen
+ * @version 0.5
  */
 public class HaTbl<K, V>{
     
     Object[] ar; 
     int size = 32768;
     /**
-     * Hajautustaulun konstruktori.
+     * The constructor of the HashMap
      */
     public HaTbl(){
         this.ar = new Object[size];
         init();
     }
     /**
-     * Tämä metodi alustaa uuteen hajautustaulun kaikki ylivuotolistat
+     * This method initialises the overflow arrays of the HashMap
      */
     public void init(){
         for (int i = 0; i < size; i++) {
@@ -32,16 +30,16 @@ public class HaTbl<K, V>{
         }
     }
     /**
-     * Tämä metodi "tyhjentää" listan luomalla uuden sen tilalle.
+     * This method clears the HashMap and initialises it again.
      */
     public void clear(){
         this.ar = new Object[size];
         init();
     }
     /**
-     * Metodi tarkistaa löytyykö taulusta haluttu avain
-     * @param key Etsittävä avain
-     * @return Palauttaa true, jos löytyy ja false, jos ei
+     * Method checks if the key given is contained in the HashMap
+     * @param key Key to be looked for
+     * @return True if found, false otherwise.
      */
     public boolean containsKey(K key){
     
@@ -65,9 +63,9 @@ public class HaTbl<K, V>{
         return false;
     }
     /**
-     * Metodi vastaa avain-arvo parien tauluun lisäämisestä
-     * @param key Avain-arvo parin avain
-     * @param val Avain-arvo parin arvo
+     * Method adds a key-value pair to the HashMap
+     * @param key Key of the pair
+     * @param val Value of the pair
      */
     public void put(K key, V val){
         
@@ -94,9 +92,9 @@ public class HaTbl<K, V>{
         } 
     }
     /**
-     * Etsii vastaavan avain-arvo parin ja palauttaa sen arvon
-     * @param key Avain, jolla etsitään.
-     * @return Arvo, joka löytyy avaimen takaa.
+     * Finds a key-value pair and returns the value
+     * @param key The key to be searched for.
+     * @return Value of the key-value pair
      */
     public V get(K key){
         
@@ -117,9 +115,9 @@ public class HaTbl<K, V>{
         return null;
     }
     /**
-     * Laskee hajautustaulun hajautusavaimen, mikäli sikäli avain on String
-     * @param toHash String, jolle lasketaan hajautusavain
-     * @return Palauttaa hajautusavaimen
+     * Calculates the hash for a String key
+     * @param toHash String, to be used
+     * @return The hash value
      */
     public int calcHash(String toHash){
         
@@ -134,6 +132,13 @@ public class HaTbl<K, V>{
         return ret;
     }
     
+    /**
+     * Dynamically allocates space for a full overflow array
+     * @param array array to be added to
+     * @param newSize The new size of the array
+     * @return Returns the new array
+     */
+    
     public Pair[] changeArraySize(Pair[] array, int newSize){
         Pair[] newArray = new Pair[newSize];
         for (int i = 0; i < array.length; i++) {
@@ -142,9 +147,19 @@ public class HaTbl<K, V>{
         return newArray;
     }
     
+    /**
+     * Method used only in tests. Returns an arrays length
+     * @return Arrays length
+     */
+    
     public int testLenght(){
         return this.ar.length;
     }
+    
+    /**
+     * Used only in tests. Returns the array
+     * @return array
+     */
     
     public Object[] getAr(){
         return this.ar;

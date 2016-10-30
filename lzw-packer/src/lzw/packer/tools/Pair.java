@@ -6,35 +6,35 @@
 package lzw.packer.tools;
 
 /**
- * Tämä luokka toimii oman HashTaulu toteutukseni standardina säilöntämuotona. Se siis sisältää avain-arvo parin.
- * @author pullis
- * @version 0.1
- * @param <K>
- * @param <V>
+ * This is the pair implementation used int the HashMap
+ * @author Samuli Rouvinen
+ * @version 0.5
+ * @param <K> Type of the key
+ * @param <V> Type of the value
  */
 public class Pair<K, V> {
     
      K key;
      V value;
     /**
-     * Pari luokan konstruktori
-     * @param a avain
-     * @param b arvo
+     * Constructor of the pair-class
+     * @param a key
+     * @param b value
      */
     public Pair(K a, V b){
         this.key = a;
         this.value = b;
     }
     /**
-     * Metodi palauttaa parin avaimen
-     * @return avain objekti
+     * Returns the key of the pair
+     * @return key object
      */
     public K getKey(){
         return this.key;
     }
     /**
-     * Metodi palauttaa parin arvon
-     * @return arvo objekti
+     * Returns the value of the pair
+     * @return value object
      */
     public V getVal(){
         return this.value;

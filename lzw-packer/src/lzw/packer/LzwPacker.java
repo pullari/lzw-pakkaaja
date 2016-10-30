@@ -10,10 +10,10 @@ import lzw.packer.compressors.Decompressor;
 import java.io.File;
 
 /**
- * Tämä toimii Lempel-Ziv-Welch pakkaajan main-luokkana.
+ * The main class of the Lempel-Ziv-Welch packing
  * 
  * @author Samuli Rouvinen
- * @version 0.1
+ * @version 0.5
  */
 public class LzwPacker {
 

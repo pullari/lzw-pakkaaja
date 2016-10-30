@@ -8,9 +8,9 @@ import lzw.packer.dictionaries.Dict;
 import java.io.*;
 
 /**
- * Tämä luokka vastaa sille annetun tekstitiedoston pakkaamisesta Lempel-Ziv-Welch algoritmilla.
- * @author pullis
- * @version 0.1
+ * This class packs the file given to it
+ * @author Samuli Rouvinen
+ * @version 0.5
  */
 public class Compressor {
     
@@ -21,8 +21,8 @@ public class Compressor {
     Dict dict;
     
     /**
-     * Pakkaajan konstruktori.
-     * @param toComp Parametrina konstruktorille injektoitava tiedosto, joka pakataan.
+     * The packers constructor
+     * @param toComp The file to be packed
      * 
      */
     public Compressor(File toComp){
@@ -41,51 +41,40 @@ public class Compressor {
     }
     
     /**
-     * Pakkaajan ainoa metodi, joka pakkaajan alustamisen jälkeen vastaa itse purkualgoritmin toteuttamisesta ja käyttämisestä.
-     * @return int palauttaa 1, jos onnistuu ja 0 jos epäonnistuu
+     * The only method of the packer which uses the LZW algorithm to pack a file
+     * @return returns 1 if succeeded, 0 if failed
+     * @throws java.io.IOException
      */
-    public int compress(){
-    
-        long timeBefComp = System.currentTimeMillis();
+    public int compress() throws IOException{
         
         String word;
         short code;
         
-        try{
-            word = (char) inR.read() + "";
+        word = (char) inR.read() + "";
             
-            //InputSreamReader palauttaa -1 kun tiedosto on luettu
-            while((code = (short) inR.read()) != -1){
+        //InputSreamReader returns -1 when read
+        while((code = (short) inR.read()) != -1){
                 
-                char c = (char) code;
+            char c = (char) code;
                 
-                if(!this.dict.hasKey(word + c)){        
-                    String write = this.dict.get(word).toString();
-                    short addToFile = Short.parseShort(write);
-                    this.writer.writeShort(addToFile);
+            if(!this.dict.hasKey(word + c)){        
+                String write = this.dict.get(word).toString();
+                short addToFile = Short.parseShort(write);
+                this.writer.writeShort(addToFile);
                     
-                    this.dict.add(word + c);
-                    word = "" + c;
-                }else{
-                    word = word + c;
-                }
+                this.dict.add(word + c);
+                word = "" + c;
+            }else{
+                word = word + c;
             }
-
-            short lastToBeAdded = Short.parseShort(this.dict.get(word).toString());
-            this.writer.writeShort(lastToBeAdded);
-            this.writer.writeShort(00);
-            
-            this.writer.close();
-            inR.close();
-        }catch(Exception e){
-            System.out.println(e.toString());
-            System.out.println("Ongelma pakatessa tiedostoa. Tiedostoa ei ehkä voitu lukea.");
-            return 0;
         }
 
-        long timeAfComp = System.currentTimeMillis();
-        long time = (timeAfComp - timeBefComp);
-        System.out.println("Pakkaamiseen Compressor-luokassa meni: " + time + " millisekuntia eli " + (time/1000) + " sekuntia");
+        short lastToBeAdded = Short.parseShort(this.dict.get(word).toString());
+        this.writer.writeShort(lastToBeAdded);
+        this.writer.writeShort(00);
+            
+        this.writer.close();
+        inR.close();
         
         return 1;
     }
